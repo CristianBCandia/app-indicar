@@ -5,6 +5,8 @@ class UserRegister extends StatelessWidget {
 
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPhone = TextEditingController();
+  final TextEditingController _controllerOtherPhone = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class UserRegister extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.redAccent,
           elevation: 10,
-          title: Text('Cadastro de usuário'), 
+          title: Text('Preencha com seus dados'), 
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -21,7 +23,7 @@ class UserRegister extends StatelessWidget {
             children: <Widget>[
               TextField(
                 controller: _controllerName,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: InputDecoration(labelText: 'Nome'),
                 keyboardType: TextInputType.name,
               ),
               Padding(
@@ -32,19 +34,62 @@ class UserRegister extends StatelessWidget {
                     keyboardType: TextInputType.emailAddress,
                   ),
               ),
-              // ignore: deprecated_member_use
-              RaisedButton(
-                child: Text('Cadastrar'),
-                color: Colors.redAccent,
-                textColor: Colors.white,
-                onPressed: () {
-                  final String name = _controllerName.text;
-                  final String email = _controllerEmail.text;
-
-                  final User user = User(name: name, email: email);
-                  print(user.name);
-                },
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: TextField(
+                    controller: _controllerPhone,
+                    decoration: InputDecoration(labelText: 'Telefone 1'),
+                    keyboardType: TextInputType.phone,
+                  ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: TextField(
+                    controller: _controllerOtherPhone,
+                    decoration: InputDecoration(labelText: 'Telefone 2'),
+                    keyboardType: TextInputType.phone,
+                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: TextField(
+                    controller: _controllerEmail,
+                    decoration: InputDecoration(labelText: 'Email'),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+              ),
+              // ignore: deprecated_member_use
+              Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: Expanded(
+                      flex: 2,
+                      child: Container(
+                        width: 500,
+                        height: 60,
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                          child: Text('Cadastrar'),
+                          color: Colors.redAccent,
+                          textColor: Colors.white,
+                          onPressed: () {
+                            final String name = _controllerName.text;
+                            final String email = _controllerEmail.text;
+                            final String phoneNumber = _controllerPhone.text;
+                            final String otherPhoneNumber = _controllerOtherPhone.text;
+                            final String birthDate = _controllerPhone.text;
+
+                            final User user = User(
+                                  name: name, 
+                                  email: email, 
+                                  phoneNumber: phoneNumber,
+                                  otherFoneNumber: otherPhoneNumber,
+                                  birthDate: birthDate);
+                            print(user.name);
+                          },
+                        ),
+                      ),
+                    ),
+                ),
             ],
           ),
         ),
