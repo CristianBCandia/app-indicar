@@ -12,10 +12,12 @@ class UserRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.indigo[900],
           elevation: 10,
-          title: Text('Preencha com seus dados'), 
+          title: Text('Preencha com seus dados', 
+                      style: TextStyle(color: Colors.white),), 
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -44,9 +46,12 @@ class UserRegister extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
+                child: TextFormField(
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                     controller: _controllerOtherPhone,
-                    decoration: InputDecoration(labelText: 'Telefone 2'),
+                    decoration: InputDecoration(
+                      labelText: 'Telefone 2', 
+                      ),
                     keyboardType: TextInputType.phone,
                   ),
               ),
@@ -68,8 +73,12 @@ class UserRegister extends StatelessWidget {
                         height: 60,
                         // ignore: deprecated_member_use
                         child: RaisedButton(
-                          child: Text('Cadastrar'),
-                          color: Colors.redAccent,
+                          child: Text('Cadastrar',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 18,
+                              )),
+                          color: Colors.orange,
                           textColor: Colors.white,
                           onPressed: () {
                             final String name = _controllerName.text;
@@ -85,6 +94,7 @@ class UserRegister extends StatelessWidget {
                                   otherFoneNumber: otherPhoneNumber,
                                   birthDate: birthDate);
                             print(user.name);
+                            Navigator.pushNamed(context, '/home');
                           },
                         ),
                       ),
