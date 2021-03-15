@@ -48,7 +48,6 @@ class UserRegister extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: TextFormField(
-                    style: TextStyle(fontSize: 20, color: Colors.white),
                     controller: _controllerOtherPhone,
                     decoration: InputDecoration(
                       labelText: 'Telefone 2', 
