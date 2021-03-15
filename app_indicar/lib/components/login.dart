@@ -1,149 +1,93 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  
-  final TextEditingController _controllerEmail = TextEditingController();
-  final TextEditingController _controllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 1000,
-      child: MaterialApp(
-        home: Scaffold(
-          backgroundColor: Colors.green[50],
-          appBar: AppBar(
-            backgroundColor: Colors.orangeAccent,
-            elevation: 10,
-            title: Text('Login', 
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          ),
-                  ), 
-          ),
-          body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-               
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: TextField(
-                      style: TextStyle(fontSize: 18),
-                      controller: _controllerEmail,
-                      decoration: InputDecoration(labelText: 'Email'),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: TextFormField(
-                      style: TextStyle(fontSize: 18),
-                      obscureText: true,
-                      controller: _controllerPassword,
-                      decoration: InputDecoration(labelText: 'Senha'),
-                      keyboardType: TextInputType.text,
-                    ),
-                ),
-                
-                // ignore: deprecated_member_use
-                Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: Expanded(
-                        flex: 2,
-                        child: Container(
-                          width: 500,
-                          height: 60,
-                          // ignore: deprecated_member_use
-                          child: RaisedButton(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.login, color: Colors.white, size: 20,),
-                                      Padding(padding: const EdgeInsets.all(3.0),),
-                                      Text('Entrar',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          )),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            color: Colors.black54,
-                            textColor: Colors.black,
-                            onPressed: () {
-                              final String name = _controllerPassword.text;
-                              final String email = _controllerEmail.text;
 
-                              Navigator.pushNamed(context, '/home');
-                            },
-                          ),
-                        ),
-                      ),
+    return Scaffold(
+
+      appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
+        elevation: 10,
+        title:Text (""),
+      ),
+      body: Container(
+      padding: EdgeInsets.all(16),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children:<Widget>[
+                  Padding(padding: EdgeInsets.only(bottom: 30),
+                      child:Image.asset("images/indicar Logotipo.png",
+                        width: 80,
+                        height: 50,
+                      )
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0),
-                     child: Expanded(
-                        flex: 2,
-                        child: Container(
-                          width: 500,
-                          height: 100,
-                          child: Column(
-                            children: [
-                              Text('Ou', style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.grey
-                                ),
-                              ),
-                              Padding(padding:  const EdgeInsets.only(top: 16.0)),
-                              Container(
-                                height: 60,
-                                // ignore: deprecated_member_use
-                                child: RaisedButton(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Padding(padding: const EdgeInsets.all(3.0),),
-                                            Text('Cadastrar',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                )),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  color: Colors.black54,
-                                  textColor: Colors.black,
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/user_register');
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                  TextField(
+                    autofocus: true,
+                    keyboardType: TextInputType.emailAddress,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                      hintText: "E-mail",
+                      filled: true,
+                      border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)
+                      )
+                     ),
                   ),
-              ],
-            ),
+                  TextField(
+                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                        hintText: "senha",
+                        filled: true,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        )
+                    ),
+                  ),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: ElevatedButton (
+                        child: Text("Entrar"),
+                        style: ElevatedButton.styleFrom(primary: Colors.orangeAccent, elevation:10, onPrimary: Colors.white,
+                            padding: EdgeInsets.all(18), shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10))),
+
+                        onPressed: (){
+                          print("clicou");
+                          Navigator.pushNamed(context, '/home');
+                        },
+                      )
+                  ),
+                 Container(
+                     margin: const EdgeInsets.only(top: 15),
+                   child: TextButton(
+                     child: Text("Criar conta!"),
+                     style: TextButton.styleFrom(primary: Colors.orangeAccent),
+                     onPressed: (){
+                       print("vai para cadastro");
+                       Navigator.pushNamed(context, '/user_register');
+                     },
+
+                   )
+
+                 ),
+            ],),
           ),
         ),
       ),
+
     );
   }
+
+
+
+
+
 }
