@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Menu',
             style: TextStyle(color: Colors.white),), 
-        backgroundColor: Colors.greenAccent[700],),
+        backgroundColor: Colors.orangeAccent,),
       body: Center(child: Text('Home Body')),
       backgroundColor: Colors.green[50],
       drawer: Drawer(
@@ -22,11 +22,28 @@ class Home extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Menu Principal', 
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Material(
+                      borderRadius: BorderRadius.circular(50),
+                      elevation: 10,
+                      child: Padding(padding: EdgeInsets.all(8.0),
+                      child: Image.asset('images/avatar.png', width: 80, height: 80,)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text('Editar', style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        )
+                      ),
+                    ),
+                  ],
                 ),
+              ),
               decoration: BoxDecoration(
-                color: Colors.deepOrange[600],
+                color: Colors.orangeAccent,
               ),
               
             ),

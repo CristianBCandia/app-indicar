@@ -14,7 +14,7 @@ class UserRegister extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.green[50],
         appBar: AppBar(
-          backgroundColor: Colors.greenAccent[700],
+          backgroundColor: Colors.orangeAccent,
           elevation: 10,
           title: Text('Preencha com seus dados', 
                       style: TextStyle(color: Colors.white),
@@ -71,7 +71,7 @@ class UserRegister extends StatelessWidget {
                       flex: 2,
                       child: Container(
                         width: 500,
-                        height: 80,
+                        height: 60,
                         // ignore: deprecated_member_use
                         child: RaisedButton(
                           child: Text('Cadastrar',
@@ -79,7 +79,7 @@ class UserRegister extends StatelessWidget {
                               color: Colors.white,
                               fontSize: 20,
                               )),
-                          color: Colors.blueAccent,
+                          color: Colors.black54,
                           textColor: Colors.black,
                           onPressed: () {
                             final String name = _controllerName.text;
