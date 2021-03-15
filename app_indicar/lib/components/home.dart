@@ -90,7 +90,7 @@ class CustomListTile extends StatelessWidget{
               children: <Widget>[
                 Row(
                   children: [
-                    Icon(icon, size: 30, color: Colors.orangeAccent,),
+                    Icon(icon, size: 30, color: Colors.blueAccent,),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(text, style: TextStyle(
@@ -102,7 +102,7 @@ class CustomListTile extends StatelessWidget{
                     ),
                   ],
                 ),
-                Icon(Icons.arrow_right, size: 30,)
+                Icon(Icons.arrow_forward, color: Colors.blueAccent,)
               ],
             ),
           ),
