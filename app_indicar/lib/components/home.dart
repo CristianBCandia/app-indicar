@@ -30,11 +30,14 @@ class Home extends StatelessWidget {
               ),
               
             ),
-            CustomListTile(Icons.person, 'Meu Perfil', (){}),
+            CustomListTile(Icons.person, 'Meu Perfil', (){
+            }),
             CustomListTile(Icons.person_add, 'Novo Cliente', (){}),
             CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
             CustomListTile(Icons.phone, 'Atendimento', (){}),
             CustomListTile(Icons.dangerous, 'Cancelar Assinatura', (){}),
+            CustomListTile(Icons.settings, 'Configurar', (){}),
+            CustomListTile(Icons.logout, 'Sair', (){}),
           ],
         ),
       ),
@@ -54,30 +57,35 @@ class CustomListTile extends StatelessWidget{
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8.0, 24.0, 8.0, 0),
-      child: InkWell(
-        onTap: onTap,
-        splashColor: Colors.orangeAccent,
-        child: Container(
-          height: 40,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                children: [
-                  Icon(icon, size: 30, color: Colors.orangeAccent,),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(text, style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.black 
+      child: Container(
+        child: InkWell(
+          onTap: onTap,
+          splashColor: Colors.orangeAccent,
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: Colors.grey.shade400))
+            ),
+            height: 40,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: [
+                    Icon(icon, size: 30, color: Colors.orangeAccent,),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(text, style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.black 
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Icon(Icons.arrow_right, size: 30,)
-            ],
+                  ],
+                ),
+                Icon(Icons.arrow_right, size: 30,)
+              ],
+            ),
           ),
         ),
       ),
