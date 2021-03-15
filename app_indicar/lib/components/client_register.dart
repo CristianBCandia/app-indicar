@@ -16,9 +16,15 @@ class ClientRegister extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           elevation: 10,
-          title: Text('Novo Cliente', 
-                      style: TextStyle(color: Colors.white),
-                ), 
+          title: Row(
+            children: [
+              Icon(Icons.person_add),
+              Padding(padding: const EdgeInsets.only(right: 16.0)),
+              Text('Cadastre Sua Indicação', 
+                          style: TextStyle(color: Colors.white),
+                    ),
+            ],
+          ), 
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -1,5 +1,6 @@
 import 'package:app_indicar/components/client_register.dart';
 import 'package:app_indicar/components/home.dart';
+import 'package:app_indicar/components/login.dart';
 import 'package:app_indicar/components/user_register.dart';
 import 'package:flutter/material.dart';
 
@@ -9,10 +10,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: <String, WidgetBuilder>{
         '/home' : (BuildContext context) => new Home(),
-        '/client_register': (BuildContext context) => new ClientRegister()
+        '/client_register': (BuildContext context) => new ClientRegister(),
+        '/user_register': (BuildContext context) => new UserRegister(),
       },
       home: Container(
-        child: UserRegister(),
+        child: Login(),
       ),    
     );
   }

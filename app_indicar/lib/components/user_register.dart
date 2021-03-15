@@ -16,7 +16,7 @@ class UserRegister extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           elevation: 10,
-          title: Text('Preencha com seus dados', 
+          title: Text('Novo Usuário', 
                       style: TextStyle(color: Colors.white),
                 ), 
         ),

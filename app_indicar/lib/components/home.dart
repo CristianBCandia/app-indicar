@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
               ),
               CustomListTile(Icons.person, 'Meu Perfil', (){
               }),
-              CustomListTile(Icons.person_add, 'Novo Cliente', (){
+              CustomListTile(Icons.person_add, 'Nova Indicação', (){
                 Navigator.pushNamed(context, '/client_register');
               }),
               CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
