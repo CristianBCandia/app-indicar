@@ -50,7 +50,9 @@ class Home extends StatelessWidget {
               ),
               CustomListTile(Icons.person, 'Meu Perfil', (){
               }),
-              CustomListTile(Icons.person_add, 'Novo Cliente', (){}),
+              CustomListTile(Icons.person_add, 'Novo Cliente', (){
+                Navigator.pushNamed(context, '/client_register');
+              }),
               CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
               CustomListTile(Icons.phone, 'Atendimento', (){}),
               CustomListTile(Icons.dangerous, 'Cancelar Assinatura', (){}),
@@ -79,7 +81,7 @@ class CustomListTile extends StatelessWidget{
       child: Container(
         child: InkWell(
           onTap: onTap,
-          splashColor: Colors.orangeAccent,
+          splashColor: Colors.blueAccent,
           child: Container(
             decoration: BoxDecoration(
               border: Border(bottom: BorderSide(color: Colors.grey.shade400))
