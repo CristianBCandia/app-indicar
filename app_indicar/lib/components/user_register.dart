@@ -12,12 +12,13 @@ class UserRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green[50],
         appBar: AppBar(
-          backgroundColor: Colors.indigo[900],
+          backgroundColor: Colors.greenAccent[700],
           elevation: 10,
           title: Text('Preencha com seus dados', 
-                      style: TextStyle(color: Colors.white),), 
+                      style: TextStyle(color: Colors.white),
+                ), 
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -70,16 +71,16 @@ class UserRegister extends StatelessWidget {
                       flex: 2,
                       child: Container(
                         width: 500,
-                        height: 60,
+                        height: 80,
                         // ignore: deprecated_member_use
                         child: RaisedButton(
                           child: Text('Cadastrar',
                             style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 18,
+                              color: Colors.white,
+                              fontSize: 20,
                               )),
-                          color: Colors.orange,
-                          textColor: Colors.white,
+                          color: Colors.blueAccent,
+                          textColor: Colors.black,
                           onPressed: () {
                             final String name = _controllerName.text;
                             final String email = _controllerEmail.text;
