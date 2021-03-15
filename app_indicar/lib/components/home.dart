@@ -5,57 +5,59 @@ class Home extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Menu',
-            style: TextStyle(color: Colors.white),), 
-        backgroundColor: Colors.orangeAccent,),
-      body: Center(child: Text('Home Body')),
-      backgroundColor: Colors.green[50],
-      drawer: Drawer(
-        
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    Material(
-                      borderRadius: BorderRadius.circular(50),
-                      elevation: 10,
-                      child: Padding(padding: EdgeInsets.all(8.0),
-                      child: Image.asset('images/avatar.png', width: 80, height: 80,)),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Indicar',
+                    style: TextStyle(color: Colors.white, fontSize: 25),),
+              ],
+          ), 
+          backgroundColor: Colors.orangeAccent,
+        ),
+
+        body: Center(child: Text('Home Body')),
+        backgroundColor: Colors.green[50],
+        drawer: Drawer(
+          
+          // Add a ListView to the drawer. This ensures the user can scroll
+          // through the options in the drawer if there isn't enough vertical
+          // space to fit everything.
+          
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                accountName: Text('Cristian'),
+                accountEmail: Text('cristian.candia7@gmail.com'),
+                  currentAccountPicture: Material(
+                    elevation: 10,
+                    borderRadius: BorderRadius.circular(50),
+                      child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: NetworkImage('https://www.pngkey.com/png/detail/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png'),
+                      backgroundColor: Colors.transparent,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text('Editar', style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        )
-                      ),
-                    ),
-                  ],
+                  ),
+                decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
                 ),
+                
               ),
-              decoration: BoxDecoration(
-                color: Colors.orangeAccent,
-              ),
-              
-            ),
-            CustomListTile(Icons.person, 'Meu Perfil', (){
-            }),
-            CustomListTile(Icons.person_add, 'Novo Cliente', (){}),
-            CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
-            CustomListTile(Icons.phone, 'Atendimento', (){}),
-            CustomListTile(Icons.dangerous, 'Cancelar Assinatura', (){}),
-            CustomListTile(Icons.settings, 'Configurar', (){}),
-            CustomListTile(Icons.logout, 'Sair', (){}),
-          ],
+              CustomListTile(Icons.person, 'Meu Perfil', (){
+              }),
+              CustomListTile(Icons.person_add, 'Novo Cliente', (){}),
+              CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
+              CustomListTile(Icons.phone, 'Atendimento', (){}),
+              CustomListTile(Icons.dangerous, 'Cancelar Assinatura', (){}),
+              CustomListTile(Icons.settings, 'Configurar', (){}),
+              CustomListTile(Icons.logout, 'Sair', (){}),
+            ],
+          ),
         ),
       ),
     );
