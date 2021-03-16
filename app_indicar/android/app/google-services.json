@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698956293252",
+    "project_id": "indicar-589a3",
+    "storage_bucket": "indicar-589a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698956293252:android:b88ad322401b142f84ced1",
+        "android_client_info": {
+          "package_name": "com.example.app_indicar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698956293252-psc5cm3ajuhfuc9tns8mc50i1m3h29rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD49lZmagSHvgMkmEqz6iNzQHO5FtPgeeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698956293252-psc5cm3ajuhfuc9tns8mc50i1m3h29rl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

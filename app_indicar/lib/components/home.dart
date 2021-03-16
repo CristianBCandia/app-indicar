@@ -2,7 +2,6 @@
 import 'package:app_indicar/components/carousel.dart';
 import 'package:flutter/material.dart';
 
-import 'button_indicar.dart';
 
 class Home extends StatelessWidget {
  
@@ -22,14 +21,7 @@ class Home extends StatelessWidget {
           backgroundColor: Colors.orangeAccent,
         ),
 
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              Carousel(),
-              ButtonIndicar(),
-            ]
-          ),
-        ),
+        body: Carousel(),
         backgroundColor: Colors.green[50],
         drawer: Drawer(
           
