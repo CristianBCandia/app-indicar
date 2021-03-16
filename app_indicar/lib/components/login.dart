@@ -69,10 +69,9 @@ class Login extends StatelessWidget {
                 Container(
                     margin: const EdgeInsets.only(top: 15),
                     child: TextButton(
-                      child: Text("Criar conta!"),
+                      child: Text("Criar conta"),
                       style: TextButton.styleFrom(primary: Colors.orangeAccent),
                       onPressed: () {
-                        print("vai para cadastro");
                         Navigator.pushNamed(context, '/user_register');
                       },
                     )),

@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
         '/home' : (BuildContext context) => new Home(),
         '/client_register': (BuildContext context) => new ClientRegister(),
         '/user_register': (BuildContext context) => new UserRegister(),
+        '/login': (BuildContext context) => new Login(),
       },
       home: Container(
         child: Login(),

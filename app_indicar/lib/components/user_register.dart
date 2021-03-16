@@ -2,7 +2,6 @@ import 'package:app_indicar/models/user.dart';
 import 'package:flutter/material.dart';
 
 class UserRegister extends StatelessWidget {
-
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPhone = TextEditingController();
@@ -11,96 +10,107 @@ class UserRegister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.green[50],
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           elevation: 10,
-          title: Text('Novo Usuário', 
-                      style: TextStyle(color: Colors.white),
-                ), 
+          title: Text(
+            'Crie sua conta',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              TextField(
-                controller: _controllerName,
-                decoration: InputDecoration(labelText: 'Nome'),
-                keyboardType: TextInputType.name,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerEmail,
-                    decoration: InputDecoration(labelText: 'Email'),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerPhone,
-                    decoration: InputDecoration(labelText: 'Telefone 1'),
-                    keyboardType: TextInputType.phone,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextFormField(
-                    controller: _controllerOtherPhone,
+        body: Container(
+          padding: EdgeInsets.fromLTRB(25, 10, 25, 10),
+          child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Container(
+                      child: TextField(
+                    autofocus: true,
+                    keyboardType: TextInputType.name,
+                    style: TextStyle(fontSize: 20),
                     decoration: InputDecoration(
-                      labelText: 'Telefone 2', 
-                      ),
-                    keyboardType: TextInputType.phone,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerEmail,
-                    decoration: InputDecoration(labelText: 'Email'),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-              ),
-              // ignore: deprecated_member_use
-              Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: Expanded(
-                      flex: 2,
-                      child: Container(
-                        width: 500,
-                        height: 60,
-                        // ignore: deprecated_member_use
-                        child: RaisedButton(
-                          child: Text('Cadastrar',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              )),
-                          color: Colors.black54,
-                          textColor: Colors.black,
-                          onPressed: () {
-                            final String name = _controllerName.text;
-                            final String email = _controllerEmail.text;
-                            final String phoneNumber = _controllerPhone.text;
-                            final String otherPhoneNumber = _controllerOtherPhone.text;
-                            final String birthDate = _controllerPhone.text;
-
-                            final User user = User(
-                                  name: name, 
-                                  email: email, 
-                                  phoneNumber: phoneNumber,
-                                  otherFoneNumber: otherPhoneNumber,
-                                  birthDate: birthDate);
-                            print(user.name);
-                            Navigator.pushNamed(context, '/home');
-                          },
-                        ),
-                      ),
+                      contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                      hintText: "Primeiro nome",
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
-                ),
-            ],
+                  )),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.phone,
+                        style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            hintText: "Telefone",
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.emailAddress,
+                        style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            hintText: "E-mail",
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.visiblePassword,
+                        style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            hintText: "Senha",
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.visiblePassword,
+                        style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            hintText: "Confirme sua senha",
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      child: ElevatedButton(
+                        child: Text("Cadastrar"),
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.orangeAccent,
+                            elevation: 10,
+                            onPrimary: Colors.white,
+                            padding: EdgeInsets.all(18),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
+                      )),
+                ],
+              ),
+            ),
           ),
         ),
       ),
