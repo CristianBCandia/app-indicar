@@ -47,7 +47,10 @@ class ClientRegister extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 16.0),
                 child: TextField(
                     controller: _controllerPhone,
-                    decoration: InputDecoration(labelText: 'Telefone 1'),
+                    decoration: InputDecoration(labelText: 'Telefone 1',
+                            fillColor: Colors.white,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,),
                     keyboardType: TextInputType.phone,
                   ),
               ),

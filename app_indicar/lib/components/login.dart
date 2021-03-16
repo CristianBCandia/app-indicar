@@ -24,36 +24,51 @@ class Login extends StatelessWidget {
                       width: 80,
                       height: 50,
                     )),
-                Container(
-                    child: TextField(
-                  autofocus: true,
-                  keyboardType: TextInputType.emailAddress,
-                  style: TextStyle(fontSize: 20),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                    hintText: "E-mail",
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                )),
-                Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    child: TextField(
-                      obscureText: true,
-                      keyboardType: TextInputType.visiblePassword,
-                      style: TextStyle(fontSize: 20),
+                Material(
+                  elevation: 10,
+                  color: Colors.transparent,
+                    child: Container(
+                      child: TextField(
+                        autofocus: false,
+                        keyboardType: TextInputType.emailAddress,
+                        style: TextStyle(fontSize: 20),
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                          hintText: "senha",
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                    )),
+                        contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                        hintText: "E-mail",
+                        filled: true,
+                        fillColor: Colors.white,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                  )),
+                ),
+                Material(
+                  elevation: 10,
+                  color: Colors.transparent,
+                  child: Container(
+                      color: Colors.transparent,
+                      margin: const EdgeInsets.only(top: 10),
+                      child: TextField(
+                        obscureText: true,
+                        keyboardType: TextInputType.visiblePassword,
+                        style: TextStyle(fontSize: 20,),
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            hintText: "Senha",
+                            filled: true,
+                            fillColor: Colors.white,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+                      )),
+                ),
                 Container(
                     margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      child: Text("Entrar"),
+                      child: Text("Entrar", style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
                           primary: Colors.orangeAccent,
                           elevation: 10,
