@@ -18,15 +18,12 @@ class _CarouselHomeState extends State<CarouselHome> {
     'Você receberá uma comissão!'
   ];
 
+  Color roxo = Color(0x990400D3);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text(""),
-        ),
+        backgroundColor: Colors.transparent,
         body: ListView(
           children: [
             SizedBox(
@@ -60,9 +57,8 @@ class _CarouselHomeState extends State<CarouselHome> {
               elevation: 10,
               semanticContainer: true,
               child: Container(
-
                 padding: EdgeInsets.all(20.0),
-                color: Colors.deepPurpleAccent,
+                color: roxo,
                 height: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

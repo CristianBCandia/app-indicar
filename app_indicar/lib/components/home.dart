@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 
 
 class Home extends StatelessWidget {
+
+  Color roxo = Color(0x990400D3);
+  Color sinza = Color(0x334495e);
  
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class Home extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 25),),
               ],
           ), 
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: roxo,
         ),
 
         body: CarouselHome(),
