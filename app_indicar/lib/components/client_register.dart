@@ -1,4 +1,3 @@
-import 'package:app_indicar/models/client.dart';
 import 'package:flutter/material.dart';
 
 class ClientRegister extends StatelessWidget {
@@ -8,111 +7,142 @@ class ClientRegister extends StatelessWidget {
   final TextEditingController _controllerPhone = TextEditingController();
   final TextEditingController _controllerOtherPhone = TextEditingController();
 
+  final Color roxo = Color(0xFF9b59b6);
+  final Color preto = Color(0xFF34495e);
+  final Color azul = Color(0xFF3498db);
+  final Color verde = Color(0xFF2ecc71);
+  final Color verdeClaro = Color(0xFF1abc9c);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.green[50],
+        backgroundColor: roxo,
         appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: verdeClaro,
           elevation: 10,
-          title: Row(
-            children: [
-              Icon(Icons.person_add),
-              Padding(padding: const EdgeInsets.only(right: 16.0)),
-              Text('Cadastre Sua Indicação', 
-                          style: TextStyle(color: Colors.white),
-                    ),
-            ],
-          ), 
+          title: Text(
+            'Cadastre sua indicação',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-        child: Column(
-           children: <Widget>[
-              TextField(
-                controller: _controllerName,
-                decoration: InputDecoration(labelText: 'Nome'),
-                keyboardType: TextInputType.name,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerEmail,
-                    decoration: InputDecoration(labelText: 'Email'),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerPhone,
-                    decoration: InputDecoration(labelText: 'Telefone 1',
-                            fillColor: Colors.white,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,),
-                    keyboardType: TextInputType.phone,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextFormField(
-                    controller: _controllerOtherPhone,
-                    decoration: InputDecoration(
-                      labelText: 'Telefone 2', 
-                      ),
-                    keyboardType: TextInputType.phone,
-                  ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: TextField(
-                    controller: _controllerEmail,
-                    decoration: InputDecoration(labelText: 'Email'),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-              ),
-              // ignore: deprecated_member_use
-              Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: Expanded(
-                      flex: 2,
+        body: Center(
+          child: Material(
+            elevation: 10,
+            color: preto,
+            borderRadius: BorderRadius.circular(20),
+            child: Container(
+              width: 400,
+              padding: EdgeInsets.fromLTRB(15, 25, 15, 25),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Material(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(10.0)),
                       child: Container(
-                        width: 500,
-                        height: 60,
-                        // ignore: deprecated_member_use
-                        child: RaisedButton(
-                          child: Text('Adicionar',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              )),
-                          color: Colors.black54,
-                          textColor: Colors.black,
-                          onPressed: () {
-                            final String name = _controllerName.text;
-                            final String email = _controllerEmail.text;
-                            final String phoneNumber = _controllerPhone.text;
-                            final String otherPhoneNumber = _controllerOtherPhone.text;
-                            final String birthDate = _controllerPhone.text;
-
-                            final Client user = Client(
-                                  name: name, 
-                                  email: email, 
-                                  phoneNumber: phoneNumber,
-                                  otherFoneNumber: otherPhoneNumber,
-                                  birthDate: birthDate);
-                            print(user.name);
-                            Navigator.pushNamed(context, '/afterRegister');
-                          },
+                          child: TextField(
+                        autofocus: true,
+                        keyboardType: TextInputType.name,
+                        style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: preto,
+                          ),
+                          contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                          hintText: "Primeiro nome",
+                          filled: true,
+                          fillColor: Colors.white,
+                          focusedBorder: InputBorder.none,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
                         ),
-                      ),
+                      )),
                     ),
+                    Padding(padding: EdgeInsets.all(3)),
+                    Material(
+                      color: Colors.transparent,
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(10.0)),
+                      child: Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: TextField(
+                            obscureText: true,
+                            keyboardType: TextInputType.phone,
+                            style: TextStyle(fontSize: 20),
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(
+                                  Icons.phone_android,
+                                  color: preto,
+                                ),
+                                contentPadding:
+                                    EdgeInsets.fromLTRB(32, 16, 32, 16),
+                                hintText: "Telefone",
+                                filled: true,
+                                fillColor: Colors.white,
+                                focusedBorder: InputBorder.none,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10))),
+                          )),
+                    ),
+                    Padding(padding: EdgeInsets.all(3)),
+                    Material(
+                      color: Colors.transparent,
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(10.0)),
+                      child: Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: TextField(
+                            obscureText: true,
+                            keyboardType: TextInputType.emailAddress,
+                            style: TextStyle(fontSize: 20),
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: preto,
+                                ),
+                                contentPadding:
+                                    EdgeInsets.fromLTRB(32, 16, 32, 16),
+                                hintText: "E-mail",
+                                filled: true,
+                                fillColor: Colors.white,
+                                focusedBorder: InputBorder.none,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10))),
+                          )),
+                    ),
+                    Padding(padding: EdgeInsets.all(3)),
+                   
+                    Padding(padding: EdgeInsets.all(10)),
+                    Container(
+                        margin: const EdgeInsets.only(top: 0),
+                        child: ElevatedButton(
+                          child: Text(
+                            "Cadastrar",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              primary: verdeClaro,
+                              elevation: 20,
+                              onPrimary: Colors.white,
+                              padding: EdgeInsets.all(18),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/login');
+                          },
+                        )),
+                  ],
                 ),
-            ],
+              ),
+            ),
+          ),
         ),
       ),
-    )
-  );
+    );
   }
 }

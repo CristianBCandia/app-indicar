@@ -4,11 +4,18 @@ import 'package:flutter/material.dart';
 
 class CarouselHome extends StatefulWidget {
 
+
   @override
   _CarouselHomeState createState() => _CarouselHomeState();
 }
 
 class _CarouselHomeState extends State<CarouselHome> {
+
+  final Color roxo = Color(0xFF9b59b6);
+  final Color preto = Color(0xFF34495e);
+  final Color azul = Color(0xFF3498db);
+  final Color verde = Color(0xFF2ecc71);
+  final Color verdeClaro = Color(0xFF1abc9c);
 
   int _current = 0;
 
@@ -18,12 +25,10 @@ class _CarouselHomeState extends State<CarouselHome> {
     'Você receberá uma comissão!'
   ];
 
-  Color roxo = Color(0x990400D3);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: verdeClaro,
         body: ListView(
           children: [
             SizedBox(
@@ -33,7 +38,8 @@ class _CarouselHomeState extends State<CarouselHome> {
                 dotColor: Colors.white,
                 dotSize: 3.0,
                 boxFit: BoxFit.none,
-                dotBgColor: Colors.orangeAccent,
+                showIndicator: false,
+                dotBgColor: verdeClaro,
                 images: [
                   Image.asset('images/client.jpeg',
                     fit: BoxFit.cover,
@@ -53,12 +59,12 @@ class _CarouselHomeState extends State<CarouselHome> {
               ),
             ),
             Card(
-              margin: new EdgeInsets.fromLTRB(10, 20, 10, 0),
+              margin: new EdgeInsets.fromLTRB(0, 0, 0, 0),
               elevation: 10,
               semanticContainer: true,
               child: Container(
                 padding: EdgeInsets.all(20.0),
-                color: roxo,
+                color: _current != 2 ? roxo : verde,
                 height: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

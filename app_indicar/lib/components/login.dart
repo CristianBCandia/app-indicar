@@ -16,7 +16,7 @@ class Login extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: roxo,
         elevation: 10,
-        title: Text("Login", style: TextStyle(color: verde),),
+        title: Text("INDICAR APP", style: TextStyle(color: Colors.white),),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -30,14 +30,15 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Padding(padding: EdgeInsets.only(top: 20)),
-                  /* Padding(
-                      padding: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/indicar Logotipo.png",
-                        width: 80,
-                        height: 50,
-                      )), */
+                  Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                  Center(
+                    child: Text("Login", 
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40
+                      ),
+                    ),
+                  ),
                   Container(
                     width: 380,
                     padding: EdgeInsets.fromLTRB(15, 70, 15, 10),
@@ -51,9 +52,9 @@ class Login extends StatelessWidget {
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                                   Icons.email,
-                                  color: verde,
+                                  color: preto,
                             ),
-                            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                            contentPadding: EdgeInsets.fromLTRB(32, 10, 32, 16),
                             hintText: "E-mail",
                             filled: true,
                             fillColor: Colors.white,
@@ -76,9 +77,9 @@ class Login extends StatelessWidget {
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                                   Icons.lock,
-                                  color: verde,
+                                  color: preto,
                             ),
-                              contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                              contentPadding: EdgeInsets.fromLTRB(20, 10, 32, 16),
                               hintText: "Senha",
                               filled: true,
                               fillColor: Colors.white,
@@ -90,9 +91,9 @@ class Login extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 10),
                       padding: EdgeInsets.fromLTRB(15, 10, 15, 0),
                       child: ElevatedButton(
-                        child: Text("Entrar", style: TextStyle(fontSize: 18, color: verde)),
+                        child: Text("Entrar", style: TextStyle(fontSize: 18, color: Colors.white)),
                         style: ElevatedButton.styleFrom(
-                            primary: roxo,
+                            primary: verdeClaro,
                             elevation: 10,
                             onPrimary: Colors.white,
                             padding: EdgeInsets.all(18),
@@ -107,7 +108,7 @@ class Login extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 15),
                       child: TextButton(
                         child: Text("Criar conta", 
-                            style: TextStyle(color: verde, 
+                            style: TextStyle(color: verdeClaro, 
                             decoration: TextDecoration.underline,
                             fontSize: 16,
                             ),
