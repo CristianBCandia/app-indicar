@@ -1,6 +1,7 @@
 
-import 'package:app_indicar/components/carousel.dart';
 import 'package:flutter/material.dart';
+
+import 'carousel.dart';
 
 
 class Home extends StatelessWidget {

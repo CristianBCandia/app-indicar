@@ -1,7 +1,7 @@
-import 'package:app_indicar/components/client_register.dart';
-import 'package:app_indicar/components/home.dart';
-import 'package:app_indicar/components/login.dart';
-import 'package:app_indicar/components/user_register.dart';
+import 'package:app_indicar/components/client_schedule/client_schedule.dart';
+import 'package:app_indicar/components/home/base_home.dart';
+import 'package:app_indicar/components/login/login.dart';
+import 'package:app_indicar/components/user_schedule/user_schedule.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
