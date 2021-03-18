@@ -10,7 +10,7 @@ class MainUserAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         leadingWidth: 30,
         backgroundColor: roxo,
@@ -25,7 +25,7 @@ class MainUserAccount extends StatelessWidget {
           children: <Widget>[
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.transparent,
+                color: roxo,
               ),
               margin: new EdgeInsets.symmetric(horizontal: 0.0),
               accountName: Text('Cristian Bittencourt Candia',
@@ -49,7 +49,7 @@ class MainUserAccount extends StatelessWidget {
       body: Container(
         margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
         height: 700,
-        color: Colors.white,
+        color: Colors.grey[200],
         child: Container(
           child: Column(
             children: <Widget>[
@@ -57,98 +57,94 @@ class MainUserAccount extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Card(
-                    elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 150,
-                        height: 150,
-                        child: Text(''),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 150,
-                        height: 150,
-                        child: Text(''),
+                    color: Colors.white,
+                    elevation: 20,
+                    child: SizedBox(
+                      height: 100,
+                      width: 430,
+                      child: Center(
+                        child: Text(
+                          'Estas são suas atividades',
+                          style: TextStyle(
+                            color: preto,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.all(10.0),),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Card(
-                    elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 200,
-                        height: 150,
-                        child: Text(''),
-                      ),
+                    elevation: 20,
+                    child: Image.asset(
+                      'images/perfil.jpg',
+                      height: 190,
                     ),
                   ),
                   Card(
-                    elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 150,
-                        height: 150,
-                        child: Text(''),
-                      ),
-                    ),
-                  ),
+                  elevation: 10,
+                  child: Image.asset(
+                    'images/avanco.png',
+                    height: 130,
+                  )),
                 ],
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Card(
                     elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 200,
-                        height: 150,
-                        child: Text(''),
-                      ),
+                    child: Image.asset(
+                      'images/buy.jpg',
+                      height: 130,
+                    ),
+                  ),
+                  Card(
+                    elevation: 50,
+                    child: Image.asset(
+                      'images/client.jpeg',
+                      height: 130,
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Image.asset(
+                      'images/house.png',
+                      height: 130,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: Image.asset(
+                      'images/grafico.jpg',
+                      height: 100,
+                      width: 200,
                     ),
                   ),
                   Card(
                     elevation: 10,
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
-                        print('Card tapped.');
-                      },
-                      child: const SizedBox(
-                        width: 150,
-                        height: 200,
-                        child: Text(''),
-                      ),
+                    child: Image.asset(
+                      'images/grafico.jpg',
+                      height: 100,
+                      width: 200,
                     ),
                   ),
                 ],
