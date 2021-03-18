@@ -1,6 +1,7 @@
 import 'package:app_indicar/components/client_schedule/client_schedule.dart';
 import 'package:app_indicar/components/home/base_home.dart';
 import 'package:app_indicar/components/login/login.dart';
+import 'package:app_indicar/components/user_account/main.dart';
 import 'package:app_indicar/components/user_schedule/user_schedule.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
         '/home' : (BuildContext context) => new Home(),
         '/client_register': (BuildContext context) => new ClientRegister(),
         '/user_register': (BuildContext context) => new UserRegister(),
+        '/user_account': (BuildContext context) => new MainUserAccount(),
         '/login': (BuildContext context) => new Login(),
       },
       home: Container(

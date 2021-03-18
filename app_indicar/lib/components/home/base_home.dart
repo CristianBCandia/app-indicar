@@ -51,11 +51,14 @@ class Home extends StatelessWidget {
               
             ),
             CustomListTile(Icons.person, 'Meu Perfil', (){
+              Navigator.pushNamed(context, '/user_account');
             }),
             CustomListTile(Icons.person_add, 'Nova Indicação', (){
               Navigator.pushNamed(context, '/client_register');
             }),
-            CustomListTile(Icons.qr_code, 'Meu QrCode', (){}),
+            CustomListTile(Icons.person_add_alt_1, 'Minhas Indicações', (){
+              
+            }),
             CustomListTile(Icons.phone, 'Atendimento', (){}),
             CustomListTile(Icons.dangerous, 'Cancelar Assinatura', (){}),
             CustomListTile(Icons.settings, 'Configurar', (){}),
